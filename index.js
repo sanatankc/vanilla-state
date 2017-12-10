@@ -1,7 +1,7 @@
 const ObjectValues = object => Object.keys(object)
   .map(key => object[key])
 
-function Store() {
+function State() {
   this.state = {}
   const subscribeList = {}
 
