@@ -16,7 +16,7 @@ function Store() {
     }
   }
 
-  this.insert = function(arg) {
+  this.set = function(arg) {
     const stateToUpdate = (typeof arg === 'function')
       ? arg(this.state)
       : arg

@@ -1,6 +1,6 @@
 const state = new Store()
 
-state.insert({
+state.set({
   counter: 0,
 })
 
@@ -10,10 +10,10 @@ state.subscribe({
 
 document.querySelector('.increment')
   .addEventListener('click', () => {
-    state.insert(prev => ({counter: prev.counter + 1}))
+    state.set(prev => ({counter: prev.counter + 1}))
   })
 
 document.querySelector('.decrement')
   .addEventListener('click', () => {
-    state.insert(prev => ({counter: prev.counter - 1}))
+    state.set(prev => ({counter: prev.counter - 1}))
   })
