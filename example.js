@@ -1,6 +1,4 @@
-const state = new State()
-
-state.set({
+const state = new State({
   counter: 0,
 })
 

@@ -1,8 +1,8 @@
 const ObjectValues = object => Object.keys(object)
   .map(key => object[key])
 
-function State() {
-  this.state = {}
+function State(state = {}) {
+  this.state = state
   const subscribeList = {}
 
   const render = statesToChange => {
