@@ -1,4 +1,4 @@
-const state = new Store()
+const state = new State()
 
 state.set({
   counter: 0,
