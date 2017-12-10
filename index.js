@@ -17,12 +17,10 @@ function Store() {
   }
 
   this.insert = function(arg) {
-    if (typeof arg === 'function') {
-      const stateToUpdate = arg(this.state)
-      Object.assign(this.state, stateToUpdate)
-    } else {
-      Object.assign(this.state, arg)
-    }
+    const stateToUpdate = (typeof arg === 'function')
+      ? arg(this.state)
+      : arg
+    Object.assign(this.state, stateToUpdate)
     render()
   }
 
