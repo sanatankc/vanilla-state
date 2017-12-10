@@ -5,15 +5,14 @@ function Store() {
   this.state = {}
   const subscribeList = {}
 
-  const render = () => {
-    for (stateToChange in subscribeList) {
-      for (subscribers of subscribeList[stateToChange]) {
+  const render = (statesToChange) => {
+    statesToChange.forEach(state => {
+      subscribeList[state].forEach(subscribers => {
         const elem = subscribers[0]
         const propertyToChange = subscribers[1]
-        console.log(elem[propertyToChange])
-        elem[propertyToChange] = this.state[stateToChange]
-      }
-    }
+        elem[propertyToChange] = this.state[state]
+      })
+    })
   }
 
   this.set = function(arg) {
@@ -21,7 +20,14 @@ function Store() {
       ? arg(this.state)
       : arg
     Object.assign(this.state, stateToUpdate)
-    render()
+    for (let state in stateToUpdate) {
+      console.log(state)
+      if (!(state in subscribeList)) {
+        console.log(state)
+        subscribeList[state] = []
+      }
+    }
+    render(Object.keys(stateToUpdate))
   }
 
   this.subscribe = function(obj) {
@@ -46,6 +52,5 @@ function Store() {
         }
       }
     }
-    console.log(subscribeList)
   }
 }
