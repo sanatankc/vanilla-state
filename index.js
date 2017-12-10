@@ -5,7 +5,7 @@ function Store() {
   this.state = {}
   const subscribeList = {}
 
-  const render = (statesToChange) => {
+  const render = statesToChange => {
     statesToChange.forEach(state => {
       subscribeList[state].forEach(subscribers => {
         const elem = subscribers[0]
