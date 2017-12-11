@@ -3,7 +3,7 @@ const state = new State({
 })
 
 state.subscribe({
-  counter: [document.querySelector('span'), 'innerText']
+  counter: ['span', 'innerText']
 })
 
 document.querySelector('.increment')
