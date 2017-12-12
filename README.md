@@ -13,7 +13,7 @@ But if you ask me to be specific about what separates this library from the rest
 ## Examples
 The core library is just of few simple methods:
 
-see [Example.html](example.html) and [Example.js](example.js) 
+see [Example.html](examples/example.html) and [Example.js](examples/example.js) 
 
 ## Contribution
 We are working on the API, so there is no `contribute.md` for now, but if you want to contribute then just open a PR or issue with your proposal.
