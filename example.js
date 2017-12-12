@@ -5,7 +5,7 @@ state.set({
 })
 
 state.subscribe({
-  counter: [document.querySelector('span'), 'innerText']
+  counter: [document.querySelector('span'), 'innerHTML']
 })
 
 document.querySelector('.increment')
