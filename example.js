@@ -1,11 +1,13 @@
-const state = new State()
-
-state.set({
+const state = new State({
   counter: 0,
 })
 
 state.subscribe({
+<<<<<<< HEAD
   counter: [document.querySelector('span'), 'innerHTML']
+=======
+  counter: ['span', 'innerText']
+>>>>>>> bf2217b480fa43d2b0336beed4d957699b8331eb
 })
 
 document.querySelector('.increment')
