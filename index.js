@@ -24,15 +24,13 @@ function State(state = {}) {
       ? arg(this.state)
       : arg
     const prevState = this.state
-    Object.assign(this.state, stateToUpdate)
+    Object.assign(this.state, stateToUpdate || {})
     for (let state in stateToUpdate) {
-      console.log(state)
       if (!(state in subscribeList)) {
-        console.log(state)
         subscribeList[state] = []
       }
     }
-    render(Object.keys(stateToUpdate), prevState)
+    render(Object.keys(stateToUpdate || {}), prevState)
   }
 
   this.subscribe = function(obj) {
