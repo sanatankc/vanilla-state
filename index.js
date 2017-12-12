@@ -5,12 +5,12 @@ function State(state = {}) {
   this.state = state
   const subscribeList = {}
 
-  const render = (statesToChange, prevState) => {
+  const render = (statesToChange, prevState = {}) => {
     statesToChange.forEach(state => {
       subscribeList[state].forEach(subscribers => {
         const elem = document.querySelector(subscribers[0])
-        if (typeof subscribers[2] === 'function') {
-          subscribers[2](elem, this.state[state], prevState[state])
+        if (typeof subscribers[1] === 'function') {
+          subscribers[1](elem, this.state[state], prevState[state] )
         } else {
           const propertyToChange = subscribers[1]
           elem[propertyToChange] = this.state[state]
